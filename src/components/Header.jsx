@@ -41,7 +41,10 @@ const Content = styled.div`
   h2 {
     font-size: 10vw;
     margin: 0;
-    transform: scale(1, 1.4);
+    span {
+      display: block;
+      transform: scale(1, 1.4);
+    }
     img {
       width: 30vw;
     }
@@ -138,7 +141,7 @@ export default class Header extends React.Component {
             {isIOS ? (
               <img src={title.default} alt="Te quero eleita" />
             ) : (
-              "Te quero eleita"
+              <span>Te quero eleita</span>
             )}
           </h2>
           <p>Por que é preciso eleger mais mulheres agora?</p>
