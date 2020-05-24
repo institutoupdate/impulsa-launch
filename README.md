@@ -1,6 +1,12 @@
 # Im.pulsa
 
-Página de lançamento da Impulsa
+## Te quero eleita!
+
+**Por que é preciso eleger mais mulheres agora?**
+
+---
+
+Página de lançamento da Im.pulsa
 
 ## Dev
 
@@ -11,11 +17,9 @@ $ npm start
 
 ## Build
 
-Execute:
-
 ```
 $ npm install
 $ npm run build
 ```
 
-Os arquivos finais estarão no diretório `public/`
+Os arquivos estarão no diretório `public/`

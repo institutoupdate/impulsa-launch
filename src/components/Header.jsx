@@ -62,15 +62,16 @@ const Content = styled.div`
     }
   }
   @media (max-width: 900px) {
+    padding-top: 35vh;
     h2 {
-      font-size: 20vw;
+      font-size: 30vw;
       img {
-        width: 50vw;
+        width: 80vw;
       }
     }
     p {
-      font-size: 3vw;
-      max-width: 50vw;
+      font-size: 5vw;
+      max-width: 80vw;
     }
   }
 `;
@@ -79,11 +80,19 @@ const ParallaxContainer = styled.div`
   position: absolute;
   max-width: 1268px;
   top: 15vw;
+  bottom: 0;
   left: 50%;
   transform: translate(-50%, 0);
   width: 100vw;
   margin: 0 auto;
   pointer-events: none;
+  .hands {
+    top: 5vw;
+  }
+  .elements {
+    top: 0;
+    height: auto !important;
+  }
   @media (max-width: 1200px) {
     top: 20vw;
     width: 120vw;
@@ -93,8 +102,20 @@ const ParallaxContainer = styled.div`
   }
   @media (max-width: 800px) {
     top: 30vw;
-    width: 130vw;
-    left: -15vw;
+    width: 200vw;
+    left: -50vw;
+    .hands {
+      top: 10vw;
+    }
+    .elements {
+      width: 200vw !important;
+      top: 15vw;
+    }
+  }
+  @media (min-width: 1300px) {
+    .elements {
+      top: 0;
+    }
   }
 `;
 
@@ -103,6 +124,7 @@ const parallaxStyle = {
   top: 0,
   left: 0,
   right: 0,
+  bottom: 0,
   overflow: "visible",
   width: "auto",
   height: "auto",
@@ -120,14 +142,14 @@ export default class Header extends React.Component {
         <ParallaxContainer>
           <Parallax
             style={parallaxStyle}
+            bgClassName="hands"
             bgImage={hands.default}
             strength={300}
           />
           <Parallax
             style={parallaxStyle}
+            bgClassName="elements"
             bgImageStyle={{
-              height: "auto",
-              marginTop: "10vw",
             }}
             bgImage={bgElements.default}
             strength={-300}

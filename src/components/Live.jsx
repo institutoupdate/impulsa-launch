@@ -31,6 +31,7 @@ const Container = styled.section`
 const Content = styled.div`
   margin: 0 2rem;
   display: flex;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
   color: #fff;
   align-items: center;
@@ -46,7 +47,8 @@ const Content = styled.div`
       margin: 0;
       box-shadow: 15px 15px 0 0 #312145;
     }
-    .video-container iframe {
+    .video-container iframe,
+    .video-container video {
       width: 100%;
       height: 100%;
       position: absolute;
@@ -63,7 +65,7 @@ const Content = styled.div`
       font-weight: 900;
       display: flex;
       flex-wrap: nowrap;
-      ${'' /* justify-content: space-between; */}
+      ${"" /* justify-content: space-between; */}
       width: 100%;
       font-size: 4em;
       margin-bottom: 2rem;
@@ -185,9 +187,6 @@ export default class Live extends React.Component {
     return (
       <Container id="live">
         <Content>
-          <section>
-            <YouTube videoId="" containerClassName="video-container" />
-          </section>
           <aside>
             <header>
               <h3>
@@ -229,6 +228,22 @@ export default class Live extends React.Component {
               </li>
             </Speakers>
           </aside>
+          <section>
+            {window.videoId ? (
+              <YouTube
+                videoId={window.videoId}
+                containerClassName="video-container"
+              />
+            ) : (
+              <div className="video-container">
+                <video
+                  type="video/mp4"
+                  src="https://impulsa.voto/teaser.mp4"
+                  controls
+                />
+              </div>
+            )}
+          </section>
         </Content>
       </Container>
     );
