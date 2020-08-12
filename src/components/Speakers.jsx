@@ -50,13 +50,16 @@ const Speaker = styled.article`
     margin: 3em;
     font-size: 1.2em;
   }
+  @media (max-width: 950px) {
+    flex: 1 1 100%;
+    font-size: 0.9em;
+  }
   @media (max-width: 550px) {
     margin: 0;
     header {
       margin: 2rem;
     }
   }
-
   @media (max-width: 400px) {
     font-size: 0.8em;
   }

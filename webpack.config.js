@@ -45,7 +45,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "public"),
-    publicPath: "/",
+    publicPath: "",
     filename: function () {
       if (ENV == "production") {
         return "[hash].js";
@@ -70,11 +70,11 @@ module.exports = {
       },
       {
         test: /fonts\/(.*)\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-        use: "file-loader?name=static/[hash].[ext]&publicPath=/",
+        use: "file-loader?name=static/[hash].[ext]&publicPath=",
       },
       {
         test: /\.(png|jpg|svg|gif|mp4)$/,
-        use: "file-loader?name=static/[hash].[ext]&publicPath=/",
+        use: "file-loader?name=static/[hash].[ext]&publicPath=",
       },
     ],
   },

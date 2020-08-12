@@ -224,7 +224,9 @@ export default class Live extends React.Component {
               </li>
               <li>
                 <h4>Thais Ferreira</h4>
-                <p>Candidata à deputada estadual/RJ em 2018</p>
+                <p>
+                  Ativista social e primeira suplente de deputada estadual/RJ
+                </p>
               </li>
             </Speakers>
           </aside>
